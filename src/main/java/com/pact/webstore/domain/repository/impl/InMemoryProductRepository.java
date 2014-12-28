@@ -52,9 +52,9 @@ public class InMemoryProductRepository implements ProductRepository {
 				productById = product;
 				break;
 			}
-			if(productById == null){
-				throw new IllegalArgumentException("No product found with product id: "+productId);
-			}
+		}
+		if(productById == null){
+			throw new IllegalArgumentException("No product found with product id: "+productId);
 		}
 		return productById;
 	}
@@ -91,5 +91,9 @@ public class InMemoryProductRepository implements ProductRepository {
 		return productByCategory;
 		
 		
+	}
+
+	public void addProduct(Product product) {
+		listOfProducts.add(product);
 	}
 }

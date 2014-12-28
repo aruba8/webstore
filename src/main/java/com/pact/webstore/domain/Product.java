@@ -3,6 +3,7 @@ package com.pact.webstore.domain;
 import java.math.BigDecimal;
 
 public class Product {
+
 	private String productId;
 	private String name;
 	private BigDecimal unitPrice;
@@ -11,42 +12,17 @@ public class Product {
 	private String category;
 	private long unitsInStock;
 	private long unitsInOrder;
-	private boolean dicontinued;
+	private boolean discontinued;
 	private String condition;
-	
-	public Product(){
+
+	public Product() {
 		super();
-	}
-	
-	public Product(String productId, String name, BigDecimal unitPrice){
+}
+
+	public Product(String productId, String name, BigDecimal unitPrice) {
 		this.productId = productId;
 		this.name = name;
 		this.unitPrice = unitPrice;
-	}
-	
-	@Override
-	public boolean equals(Object obj){
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		Product other = (Product) obj;
-		if (productId == null) {
-		      if (other.productId != null) return false;
-		} else if (!productId.equals(other.productId)) return false;
-		return true;
-	}
-	
-	@Override
-	public int hashCode(){
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((productId == null) ? 0 : productId.hashCode());
-		return result;
-	}
-	
-	@Override
-	public String toString(){
-		return " Product [productId="+productId+", name="+name+"]";
 	}
 
 	public String getProductId() {
@@ -113,19 +89,50 @@ public class Product {
 		this.unitsInOrder = unitsInOrder;
 	}
 
-	public boolean isDicontinued() {
-		return dicontinued;
+	public boolean isDiscontinued() {
+		return discontinued;
 	}
 
-	public void setDicontinued(boolean dicontinued) {
-		this.dicontinued = dicontinued;
+	public void setDiscontinued(boolean discontinued) {
+		this.discontinued = discontinued;
 	}
-
+	
 	public String getCondition() {
 		return condition;
 	}
 
 	public void setCondition(String condition) {
 		this.condition = condition;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (productId == null) {
+			if (other.productId != null)
+				return false;
+		} else if (!productId.equals(other.productId))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((productId == null) ? 0 : productId.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", name=" + name + "]";
 	}
 }
