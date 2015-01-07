@@ -1,4 +1,4 @@
-package com.packt.webstore.service.impl;
+package com.packt.webstore.controller;
 
 import com.packt.webstore.domain.Cart;
 import com.packt.webstore.domain.CartItem;

@@ -11,13 +11,6 @@ charset=ISO-8859-1">
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1 class="alert alert-danger">Invalid promo code</h1>
-			</div>
-		</div>
-	</section>
-	<section>
 		<div class="container">
 			<p>
 				<a href="<spring:url value="/products" />" class="btn btn-primary">
